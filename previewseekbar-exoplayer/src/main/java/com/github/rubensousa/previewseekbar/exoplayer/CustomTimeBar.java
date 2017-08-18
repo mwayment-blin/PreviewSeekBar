@@ -28,6 +28,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
@@ -289,6 +290,9 @@ public class CustomTimeBar extends View implements TimeBar {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
+        Log.d("CustomTimerBar", "onTouchEvent: " + event + ", isEnabled: " + isEnabled() +
+                ", duration: " + duration);
+
         if (!isEnabled() || duration <= 0) {
             return false;
         }
@@ -604,6 +608,8 @@ public class CustomTimeBar extends View implements TimeBar {
      * @return Returns whether the scrubber position changed.
      */
     private boolean scrubIncrementally(long positionChange) {
+        Log.d("CustomTimerBar", "scrubIncrementally: " + positionChange);
+
         if (duration <= 0) {
             return false;
         }

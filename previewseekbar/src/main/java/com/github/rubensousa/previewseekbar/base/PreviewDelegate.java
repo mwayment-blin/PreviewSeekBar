@@ -2,6 +2,7 @@ package com.github.rubensousa.previewseekbar.base;
 
 
 import android.os.Build;
+import android.util.Log;
 import android.view.View;
 
 class PreviewDelegate implements PreviewView.OnPreviewChangeListener {
@@ -71,9 +72,11 @@ class PreviewDelegate implements PreviewView.OnPreviewChangeListener {
 
     @Override
     public void onPreview(PreviewView previewView, int progress, boolean fromUser) {
+        Log.d("PreviewDelegate", "onPreview: setup = " + setup + ", progress = " + progress +
+                ", fromUser: " + fromUser + ", startTouch = " + startTouch);
         if (setup) {
             animator.move();
-            if (!showing && !startTouch && fromUser) {
+            if (!showing && !startTouch) {
                 animator.show();
                 showing = true;
             }

@@ -2,6 +2,7 @@ package com.github.rubensousa.previewseekbar.exoplayer;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.util.Log;
 
 import com.github.rubensousa.previewseekbar.base.PreviewView;
 import com.google.android.exoplayer2.ui.TimeBar;
@@ -59,6 +60,8 @@ public class PreviewTimeBar extends CustomTimeBar implements PreviewView, TimeBa
 
     @Override
     public void onScrubMove(TimeBar timeBar, long position) {
+        Log.d("PreviewTimeBar", "onScrubMove: " + position);
+
         for (OnPreviewChangeListener listener : listeners) {
             listener.onPreview(this, (int) position, true);
         }

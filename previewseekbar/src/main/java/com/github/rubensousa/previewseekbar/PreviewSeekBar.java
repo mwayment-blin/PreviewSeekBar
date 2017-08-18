@@ -9,6 +9,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v4.graphics.drawable.DrawableCompat;
 import android.support.v7.widget.AppCompatSeekBar;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.widget.SeekBar;
 
 import com.github.rubensousa.previewseekbar.base.PreviewView;
@@ -90,6 +91,7 @@ public class PreviewSeekBar extends AppCompatSeekBar implements PreviewView,
 
     @Override
     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+        Log.d("PreviewSeekBar", "onProgressChanged: " + progress + ", fromUser: " + fromUser);
         for (OnPreviewChangeListener listener : listeners) {
             listener.onPreview(this, progress, fromUser);
         }
