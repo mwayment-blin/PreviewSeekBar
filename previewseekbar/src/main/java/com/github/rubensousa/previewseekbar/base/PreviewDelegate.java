@@ -11,6 +11,7 @@ class PreviewDelegate implements PreviewView.OnPreviewChangeListener {
     private boolean showing;
     private boolean startTouch;
     private boolean setup;
+    private boolean autoHideAfterScrub = false;
 
     public PreviewDelegate(PreviewLayout previewLayout) {
         this.previewLayout = previewLayout;
@@ -47,6 +48,10 @@ class PreviewDelegate implements PreviewView.OnPreviewChangeListener {
         }
     }
 
+    public void setAutoHideAfterScrub(boolean autoHideAfterScrub) {
+        this.autoHideAfterScrub = autoHideAfterScrub;
+    }
+
     @Override
     public void onStartPreview(PreviewView previewView) {
         startTouch = true;
@@ -54,10 +59,9 @@ class PreviewDelegate implements PreviewView.OnPreviewChangeListener {
 
     @Override
     public void onStopPreview(PreviewView previewView) {
-        if (showing) {
-            animator.hide();
+        if (autoHideAfterScrub) {
+            hide();
         }
-        showing = false;
         startTouch = false;
     }
 

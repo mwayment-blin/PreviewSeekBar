@@ -121,6 +121,10 @@ public abstract class PreviewGeneralLayout extends RelativeLayout implements Pre
         delegate.hide();
     }
 
+    public void setAutoHidePreviewAfterScrub(boolean autoHidePreviewAfterScrub) {
+        delegate.setAutoHideAfterScrub(autoHidePreviewAfterScrub);
+    }
+
     @Override
     public View getFrameView() {
         return frameView;
