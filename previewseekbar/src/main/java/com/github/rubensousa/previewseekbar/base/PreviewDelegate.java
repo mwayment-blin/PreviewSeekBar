@@ -36,6 +36,7 @@ class PreviewDelegate implements PreviewView.OnPreviewChangeListener {
     }
 
     public void show() {
+        Log.d("PreviewDelegate", "show: showing = " + showing + ", setup = " + setup);
         if (!showing && setup) {
             animator.show();
             showing = true;

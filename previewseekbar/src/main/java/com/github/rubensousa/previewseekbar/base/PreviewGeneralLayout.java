@@ -7,12 +7,14 @@ import android.support.annotation.ColorRes;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.graphics.drawable.DrawableCompat;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
+
 import com.github.rubensousa.previewseekbar.R;
 
 public abstract class PreviewGeneralLayout extends RelativeLayout implements PreviewLayout,
@@ -114,6 +116,7 @@ public abstract class PreviewGeneralLayout extends RelativeLayout implements Pre
     }
 
     public void showPreview() {
+        Log.d("PreviewGeneralLayout", "showPreview");
         delegate.show();
     }
 

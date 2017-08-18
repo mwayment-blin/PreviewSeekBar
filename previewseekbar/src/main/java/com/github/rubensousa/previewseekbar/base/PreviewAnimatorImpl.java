@@ -3,6 +3,7 @@ package com.github.rubensousa.previewseekbar.base;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.AccelerateInterpolator;
@@ -33,6 +34,8 @@ class PreviewAnimatorImpl extends PreviewAnimator {
 
     @Override
     public void show() {
+        Log.d("PreviewAnimatorImpl", "show");
+
         previewChildView.setScaleX(getScaleXStart());
         previewChildView.setScaleY(getScaleYStart());
         morphView.setX(getPreviewCenterX(morphView.getWidth()));

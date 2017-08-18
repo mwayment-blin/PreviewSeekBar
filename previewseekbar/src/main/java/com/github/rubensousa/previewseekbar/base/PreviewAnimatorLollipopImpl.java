@@ -5,6 +5,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.os.Build;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewAnimationUtils;
 import android.view.animation.AccelerateDecelerateInterpolator;
@@ -36,6 +37,8 @@ class PreviewAnimatorLollipopImpl extends PreviewAnimator {
 
     @Override
     public void show() {
+        Log.d("PreviewAnimatorLol", "show");
+
         previewChildView.setVisibility(View.INVISIBLE);
         frameView.setVisibility(View.INVISIBLE);
         morphView.setX(getPreviewCenterX(morphView.getWidth()));
