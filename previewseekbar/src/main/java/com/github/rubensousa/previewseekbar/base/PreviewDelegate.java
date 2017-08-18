@@ -40,6 +40,8 @@ class PreviewDelegate implements PreviewView.OnPreviewChangeListener {
         if (!showing && setup) {
             animator.show();
             showing = true;
+        } else if (setup) {
+            animator.move();
         }
     }
 
@@ -74,7 +76,7 @@ class PreviewDelegate implements PreviewView.OnPreviewChangeListener {
     @Override
     public void onPreview(PreviewView previewView, int progress, boolean fromUser) {
         Log.d("PreviewDelegate", "onPreview: setup = " + setup + ", progress = " + progress +
-                ", fromUser: " + fromUser + ", startTouch = " + startTouch);
+                ", fromUser: " + fromUser + ", startTouch = " + startTouch + ", showing: " + showing);
         if (setup) {
             animator.move();
             if (!showing && !startTouch) {
