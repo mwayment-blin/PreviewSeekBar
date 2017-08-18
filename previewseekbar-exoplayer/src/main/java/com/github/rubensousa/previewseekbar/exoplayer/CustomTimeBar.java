@@ -343,6 +343,8 @@ public class CustomTimeBar extends View implements TimeBar {
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
+        Log.d("CustomTimeBar", "onKeyDown: keyCode = " + keyCode);
+
         if (isEnabled()) {
             long positionIncrement = getPositionIncrement();
             switch (keyCode) {
@@ -368,6 +370,7 @@ public class CustomTimeBar extends View implements TimeBar {
                     // Do nothing.
             }
         }
+
         return super.onKeyDown(keyCode, event);
     }
 
