@@ -224,6 +224,18 @@ public class CustomTimeBar extends View implements TimeBar {
         this.listeners.remove(listener);
     }
 
+    public void scrubForward() {
+        if (scrubIncrementally(getPositionIncrement())) {
+            stopScrubbing(false);
+        }
+    }
+
+    public void scrubBackward() {
+        if (scrubIncrementally(-getPositionIncrement())) {
+            stopScrubbing(false);
+        }
+    }
+
     @Override
     public void setKeyTimeIncrement(long time) {
         Assertions.checkArgument(time > 0);
