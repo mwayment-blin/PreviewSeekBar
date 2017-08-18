@@ -52,6 +52,10 @@ class PreviewDelegate implements PreviewView.OnPreviewChangeListener {
         this.autoHideAfterScrub = autoHideAfterScrub;
     }
 
+    public boolean isAutoHideAfterScrub() {
+        return autoHideAfterScrub;
+    }
+
     @Override
     public void onStartPreview(PreviewView previewView) {
         startTouch = true;

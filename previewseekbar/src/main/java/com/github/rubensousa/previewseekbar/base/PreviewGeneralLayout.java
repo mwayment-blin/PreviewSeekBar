@@ -154,7 +154,9 @@ public abstract class PreviewGeneralLayout extends RelativeLayout implements Pre
 
     @Override
     public void onStopPreview(PreviewView previewView) {
-        hidePreview();
+        if (delegate.isAutoHideAfterScrub()) {
+            hidePreview();
+        }
     }
 
     @Override
