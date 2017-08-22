@@ -482,9 +482,31 @@ public class CustomTimeBar extends View implements TimeBar {
         return scrubPosition;
     }
 
+    public int getPlayedColor() {
+        return playedPaint.getColor();
+    }
     public int getScrubberColor() {
         return scrubberPaint.getColor();
     }
+    public int getBufferedColor() {
+        return bufferedPaint.getColor();
+    }
+    public int getUnplayedColor() {
+        return unplayedPaint.getColor();
+    }
+    public int getAdMarkerColor() {
+        return adMarkerPaint.getColor();
+    }
+    public int getPlayedAdsColor() {
+        return playedAdMarkerPaint.getColor();
+    }
+
+    public void setPlayedColor(int color) { playedPaint.setColor(color); invalidate(); }
+    public void setScrubberColor(int color) { scrubberPaint.setColor(color); invalidate(); }
+    public void setBufferedColor(int color) { bufferedPaint.setColor(color); invalidate(); }
+    public void setUnplayedColor(int color) { unplayedPaint.setColor(color); invalidate(); }
+    public void setAdMarkerColor(int color) { adMarkerPaint.setColor(color); invalidate(); }
+    public void setPlayedAdsColor(int color) { playedAdMarkerPaint.setColor(color); invalidate(); }
 
     // Internal methods.
 
